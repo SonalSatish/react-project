@@ -20,7 +20,7 @@
 import { CARD_IMG } from "../utils/constants";
 export const RestaurantCard = (props) => {
     const { resData } = props;
-    const { cloudinaryImageId, name, avgRating, costForTwo, cuisines } = resData?.info
+    const { cloudinaryImageId, name, avgRating, costForTwo, cuisines, sla, areaName } = resData?.info
     return (    
             <div className="res-card">
                 <img src={ CARD_IMG + cloudinaryImageId} className="res-logo" />
@@ -28,6 +28,8 @@ export const RestaurantCard = (props) => {
                 <h4>{avgRating}</h4>
                 <h4>{costForTwo}</h4>
                 <h4>{cuisines.join(", ")}</h4>
+                <h4>{sla.slaString}</h4>
+                <h4>{areaName}</h4>
                 {/* <h4>{resData.Data.info.timing}</h4>
 
             <h4>{resData.Data.info.locality}</h4>
